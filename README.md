@@ -1,156 +1,124 @@
-# 📖 Story Platform - Nền Tảng Đọc Truyện Cá Nhân & Quản Lý Nội Dung
+# Story Platform - Digital Publishing & Reader System
 
-Một nền tảng đọc truyện cá nhân hiện đại, tốc độ cao được xây dựng theo kiến trúc **Monorepo (Turborepo)** với **Next.js 15 App Router**, **Supabase Cloud**, **TailwindCSS v4**, **TypeScript Strict** và hệ thống đa ngôn ngữ **`next-intl`**.
-
----
-
-## 🌟 Tính Năng Nổi Bật
-
-### 📚 Web Reader (`apps/web`) - Dành cho Độc Giả
-- **Trải nghiệm đọc linh hoạt**:
-  - **Trình đọc Tiểu thuyết (`TextReader`)**: Tùy chỉnh cỡ chữ (14px - 28px), chọn phông chữ (Sans-serif, Serif, Monospace), đổi màu nền đọc (Sáng, Tối, Sepia).
-  - **Trình đọc Manga (`MangaReader`)**: Đọc truyện tranh cuộn dọc chất lượng cao.
-- **Tương tác & Cộng đồng**:
-  - **Bình luận độc giả**: Cho phép viết, chỉnh sửa trực tiếp và xóa bình luận cá nhân.
-  - **Đánh giá sao (1-5 ⭐)**: Chấm điểm truyện với thống kê điểm trung bình tự động.
-  - **Đánh dấu truyện (Bookmark)**: Lưu các bộ truyện yêu thích.
-  - **Tự động lưu lịch sử đọc**: Đồng bộ tiến trình đọc giữa LocalStorage và Database.
-- **Tìm kiếm & Điều hướng**:
-  - Tìm kiếm truyện realtime dạng popover modal (`Ctrl + K`).
-  - Lọc truyện theo thể loại, loại truyện (Novel, Manga, Light Novel), trạng thái và sắp xếp.
-- **Hệ thống Thông báo**:
-  - Biểu tượng chuông thông báo trên Navbar với `unread badge`.
-  - Nhận tin phát broadcast từ Admin, hỗ trợ đánh dấu đã đọc hoặc xóa thông báo.
-- **Đa ngôn ngữ & Giao diện**:
-  - Hỗ trợ 4 ngôn ngữ: Tiếng Việt (Vi), English (En), Français (Fr), 日本語 (Ja).
-  - Dark/Light Theme mượt mà.
-
-### 🛡️ Admin Portal (`apps/admin`) - Dành cho Quản Trị Viên
-- **Bảo mật tuyệt đối**:
-  - Khóa cứng độc quyền vai trò Quản trị viên tối cao (Super Admin / Owner).
-  - Bảo vệ 100% Server Actions bằng xác thực `verifyAdmin()`.
-  - HTTP Security Headers chuẩn OWASP (`X-Frame-Options`, `X-Content-Type-Options`, `Referrer-Policy`).
-- **Quản lý Nội dung (CRUD)**:
-  - Thêm, chỉnh sửa, xóa truyện; upload ảnh bìa lên Supabase Storage bucket.
-  - Thêm, sửa, xóa chương truyện (Hỗ trợ nội dung Text & mảng ảnh Manga).
-  - Gán danh mục thể loại cho từng bộ truyện.
-- **Quản lý Độc giả**:
-  - Xem danh sách và trang chi tiết từng độc giả (Email, Provider, Ngày tạo, Lần đăng nhập cuối, Thống kê bọokmark/lịch sử/bình luận).
-  - Đặt lại mật khẩu trực tiếp cho độc giả mà không qua email confirmation.
-  - Khóa tài khoản theo thời hạn (1 giờ, 24 giờ, 7 ngày, 30 ngày, Vĩnh viễn).
-  - Xóa vĩnh viễn tài khoản độc giả khỏi Supabase Auth và Database.
-- **Kiểm duyệt Bình luận**:
-  - Duyệt (Approve), Từ chối (Reject) hoặc Xóa (Delete) bình luận gửi lên từ độc giả.
-- **Thông báo & Phát tin (Broadcast Notification)**:
-  - Gửi thông báo tới toàn bộ thiết bị độc giả, hỗ trợ sửa và xóa lịch sử phát tin.
-- **Cấu hình Hệ thống**:
-  - Cập nhật Tên trang web, Mô tả SEO, Tải ảnh Logo mới, Cài đặt link Facebook/Discord.
+Story Platform là giải pháp xuất bản và đọc truyện kỹ thuật số tốc độ cao, được thiết kế theo kiến trúc **Monorepo (Turborepo)** kết hợp **Next.js 15 App Router**, **Supabase Cloud**, **TailwindCSS v4**, **TypeScript Strict** và hệ thống đa ngôn ngữ **`next-intl`**.
 
 ---
 
-## 🛠️ Công Nghệ Sử Dụng (Tech Stack)
+## 1. Tổng Quan Kiến Trúc (Architecture Overview)
 
-- **Framework**: [Next.js 15 (App Router)](https://nextjs.org/)
-- **Monorepo Tool**: [Turborepo](https://turbo.build/)
-- **Database & Auth**: [Supabase Cloud (PostgreSQL + Auth + Storage)](https://supabase.com/)
-- **Styling**: [TailwindCSS v4](https://tailwindcss.com/)
-- **Language**: TypeScript Strict Mode
-- **Localization**: [next-intl](https://next-intl-docs.vercel.app/)
-- **UI Components**: `@repo/ui` (Design System tối ưu, không sử dụng emoji)
-
----
-
-## 📁 Cấu Trúc Dự Án (Monorepo Architecture)
+Hệ thống bao gồm hai ứng dụng độc lập và bốn gói thư viện dùng chung được quản lý tập trung:
 
 ```text
 story-platform/
 ├── apps/
-│   ├── web/               # Trang đọc truyện cho Độc giả (Port 3000)
-│   └── admin/             # Trang quản trị dành cho Admin (Port 3001)
+│   ├── web/               # Ứng dụng Reader dành cho độc giả (Port 3000)
+│   └── admin/             # Ứng dụng Portal dành cho Quản trị viên (Port 3001)
 ├── packages/
-│   ├── ui/                # Thư viện UI Component dùng chung (Button, Card, Input, Modal, Icons...)
-│   ├── supabase/          # Supabase Client, Server Helpers & SSR Middleware
-│   ├── types/             # TypeScript Database Definitions & Data Models
-│   └── i18n/              # Cấu hình đa ngôn ngữ & File Dịch (VI, EN, FR, JA)
+│   ├── ui/                # Thư viện giao diện dùng chung (Design System)
+│   ├── supabase/          # Supabase SSR Client, Service Client & Middleware
+│   ├── types/             # Định nghĩa dữ liệu TypeScript Database Schema
+│   └── i18n/              # Cấu hình đa ngôn ngữ & tệp dịch (VI, EN, FR, JA)
 ├── supabase/
-│   ├── migrations/        # SQL Schema & PostgreSQL Triggers
-│   └── seed.sql           # Dữ liệu mẫu ban đầu (Genres, Settings)
-├── turbo.json             # Cấu hình Turborepo Build Cache
-└── package.json           # Root Dependencies & Scripts
+│   ├── migrations/        # Cấu hình Database Schema & Triggers PostgreSQL
+│   └── seed.sql           # Dữ liệu khởi tạo hệ thống (Genres, Site Settings)
+├── turbo.json             # Cấu hình Turborepo Pipeline & Caching
+└── package.json           # Quản lý phụ thuộc cấp cao nhất
 ```
 
 ---
 
-## 🚀 Hướng Dẫn Cài Đặt & Chạy Chạy Local
+## 2. Tính Năng Chi Tiết (Feature Specifications)
 
-### 1. Yêu cầu Tiền đề
-- Node.js version >= 18.0.0
-- npm version >= 10.0.0
-- Tài khoản Supabase Cloud (hoặc Supabase CLI chạy local)
+### 2.1. Web Reader App (`apps/web`)
+- **Trình đọc nội dung đa dạng**:
+  - **Trình đọc Tiểu thuyết (`TextReader`)**: Cho phép tùy chỉnh cỡ chữ (14px - 28px), phông chữ (Sans-serif, Serif, Monospace) và màu nền đọc (Sáng, Tối, Sepia).
+  - **Trình đọc Truyện tranh (`MangaReader`)**: Đọc truyện tranh cuộn dọc tối ưu hóa tải ảnh.
+- **Tương tác độc giả**:
+  - **Khung bình luận trực tiếp**: Độc giả có thể viết bình luận, chỉnh sửa và xóa bình luận của chính mình.
+  - **Đánh giá sao (1 - 5 Stars)**: Chấm điểm bộ truyện và cập nhật điểm trung bình theo thời gian thực.
+  - **Đánh dấu (Bookmark)**: Lưu các bộ truyện yêu thích vào danh sách cá nhân.
+  - **Lịch sử đọc (Reading History)**: Đồng bộ tiến trình đọc giữa LocalStorage và cơ sở dữ liệu.
+- **Hệ thống Tìm kiếm & Thông báo**:
+  - Tìm kiếm truyện theo thời gian thực dạng Modal (`Ctrl + K`).
+  - Lọc truyện theo thể loại, định dạng (Novel, Manga, Light Novel), trạng thái và tiêu chí sắp xếp.
+  - Chuông thông báo hiển thị tin tức broadcast từ Quản trị viên, hỗ trợ đánh dấu đã đọc hoặc xóa thông báo.
+- **Bản địa hóa & Giao diện**:
+  - Hỗ trợ 4 ngôn ngữ: Tiếng Việt (`vi`), English (`en`), Français (`fr`), 日本語 (`ja`).
+  - Chế độ giao diện Tối / Sáng (Dark / Light Mode).
 
-### 2. Cấu hình Biến Môi Trường (`.env`)
+### 2.2. Admin Portal (`apps/admin`)
+- **Kiểm soát truy cập & Bảo mật**:
+  - Phân quyền Quản trị viên tối cao (Owner) cố định cho tài khoản hệ thống.
+  - Xác thực 100% Server Actions thông qua hàm `verifyAdmin()`.
+  - Cấu hình HTTP Security Headers tiêu chuẩn OWASP (`X-Frame-Options`, `X-Content-Type-Options`, `Referrer-Policy`).
+- **Quản lý Nội dung (CMS)**:
+  - Thêm, sửa, xóa truyện; tải ảnh bìa lên Supabase Storage bucket.
+  - Thêm, sửa, xóa chương truyện (Hỗ trợ định dạng Văn bản và mảng ảnh Manga).
+  - Phân loại danh mục thể loại cho từng bộ truyện.
+- **Quản lý Độc giả**:
+  - Danh sách và trang chi tiết độc giả (Email, Nhà cung cấp xác thực, Ngày tạo, Lần đăng nhập cuối, Thống kê cá nhân).
+  - Đặt lại mật khẩu trực tiếp cho độc giả.
+  - Khóa tài khoản theo thời hạn (1 giờ, 24 giờ, 7 ngày, 30 ngày, Vĩnh viễn).
+  - Xóa vĩnh viễn tài khoản khỏi Supabase Auth và cơ sở dữ liệu.
+- **Kiểm duyệt & Phát tin**:
+  - Kiểm duyệt bình luận: Duyệt (Approve), Từ chối (Reject), hoặc Xóa (Delete).
+  - Phát tin thông báo (Broadcast Notification) tới toàn bộ độc giả, cho phép chỉnh sửa và xóa nhật ký thông báo.
+- **Cấu hình Hệ thống**:
+  - Thay đổi tên nền tảng, mô tả SEO, tải logo mới và liên kết mạng xã hội.
 
-Tạo file `.env.local` ở thư mục gốc hoặc trong từng ứng dụng (`apps/web/.env.local` và `apps/admin/.env.local`):
+---
+
+## 3. Danh Mục Công Nghệ (Tech Stack)
+
+- **Framework**: Next.js 15 (App Router, Server Actions)
+- **Monorepo Build System**: Turborepo
+- **Database & Auth**: Supabase Cloud (PostgreSQL, Auth Admin API, Storage)
+- **Styling Engine**: TailwindCSS v4
+- **Language**: TypeScript Strict Mode
+- **Internationalization**: next-intl
+- **Shared Components**: `@repo/ui`
+
+---
+
+## 4. Cấu Hình & Chạy Ứng Dụng (Setup & Local Development)
+
+### 4.1. Khởi tạo Biến Môi Trường
+
+Tạo tệp `.env.local` tại thư mục gốc hoặc trong từng ứng dụng (`apps/web/.env.local` và `apps/admin/.env.local`):
 
 ```env
-# Supabase Configuration
 NEXT_PUBLIC_SUPABASE_URL=https://<your-project-id>.supabase.co
 NEXT_PUBLIC_SUPABASE_ANON_KEY=<your-anon-key>
 SUPABASE_SERVICE_ROLE_KEY=<your-service-role-key>
-
-# Site Settings
 NEXT_PUBLIC_SITE_URL=http://localhost:3000
 ```
 
-### 3. Cài đặt Dependencies
+### 4.2. Lệnh Thao Tác
 
 ```bash
+# Cài đặt toàn bộ dependencies trong Monorepo
 npm install
-```
 
-### 4. Chạy Môi Trường Development
-
-Khởi động cả Web Reader và Admin Portal song song bằng Turborepo:
-
-```bash
+# Khởi chạy môi trường phát triển (Web: 3000, Admin: 3001)
 npm run dev
-```
 
-- **Web Reader**: [http://localhost:3000](http://localhost:3000)
-- **Admin Portal**: [http://localhost:3001](http://localhost:3001)
-
-### 5. Kiểm tra Typecheck & Build Sản Phẩm
-
-```bash
-# Kiểm tra TypeScript toàn bộ 6 packages
+# Kiểm tra tĩnh TypeScript (Strict Typecheck cho 6 packages)
 npm run typecheck
 
-# Đóng gói Build Production
+# Đóng gói sản phẩm (Production Build)
 npm run build
 ```
 
 ---
 
-## 🌐 Hướng Dẫn Deploy Lên Vercel (CI/CD)
+## 5. Quy Trình Triển Khai (Deployment Workflow)
 
-1. Push mã nguồn lên repository GitHub của bạn:
-   ```bash
-   git init
-   git add .
-   git commit -m "Deploy production v1.0"
-   git branch -M main
-   git remote add origin https://github.com/ZeusEdom/project_R.git
-   git push -u origin main
-   ```
+### 5.1. GitHub Repository
+Mã nguồn được quản lý tại: [https://github.com/ZeusEdom/project_R](https://github.com/ZeusEdom/project_R)
 
-2. Đăng nhập Vercel và tạo **2 Project**:
-   - **Project 1 (Web Reader)**: Root Directory chọn `apps/web`
-   - **Project 2 (Admin Portal)**: Root Directory chọn `apps/admin`
-
-3. Điền các biến môi trường `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`, và `SUPABASE_SERVICE_ROLE_KEY` trên Vercel.
-
----
-
-## 📜 Giấy Phép & Bản Quyền (License)
-
-Dự án được phát triển và sở hữu bởi **ZeusEdom**. Tất cả quyền được bảo lưu.
+### 5.2. Triển khai trên Vercel
+1. Nhập repository `ZeusEdom/project_R` vào Vercel.
+2. Tạo ứng dụng **Web Reader**: Cấu hình Root Directory là `apps/web`.
+3. Tạo ứng dụng **Admin Portal**: Cấu hình Root Directory là `apps/admin`.
+4. Điền các biến môi trường `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`, và `SUPABASE_SERVICE_ROLE_KEY`.
+5. Kích hoạt tính năng Tự động Triển khai (Automatic CI/CD Deployment) khi có commit mới trên nhánh `main`.
