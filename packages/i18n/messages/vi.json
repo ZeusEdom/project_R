@@ -1,0 +1,115 @@
+{
+  "common": {
+    "loading": "Đang tải...",
+    "error": "Có lỗi xảy ra",
+    "retry": "Thử lại",
+    "save": "Lưu",
+    "cancel": "Hủy",
+    "delete": "Xóa",
+    "edit": "Chỉnh sửa",
+    "create": "Tạo mới",
+    "search": "Tìm kiếm",
+    "filter": "Lọc",
+    "sortBy": "Sắp xếp theo",
+    "noResults": "Không có kết quả",
+    "viewAll": "Xem tất cả",
+    "back": "Quay lại",
+    "next": "Tiếp theo",
+    "previous": "Trước đó",
+    "confirm": "Xác nhận",
+    "close": "Đóng"
+  },
+  "nav": {
+    "home": "Trang chủ",
+    "browse": "Duyệt truyện",
+    "bookmarks": "Đánh dấu",
+    "history": "Lịch sử đọc",
+    "settings": "Cài đặt",
+    "login": "Đăng nhập",
+    "signup": "Đăng ký",
+    "logout": "Đăng xuất",
+    "profile": "Hồ sơ"
+  },
+  "home": {
+    "featured": "Truyện nổi bật",
+    "latestUpdates": "Truyện Mới Cập Nhật",
+    "latestUpdatesSub": "Danh sách tiểu thuyết và manga mới phát hành",
+    "noStories": "Chưa có truyện nào được đăng tải.",
+    "searchPlaceholder": "Tìm kiếm tên truyện, tác giả...",
+    "footerTagline": "Nền tảng đọc truyện cá nhân đa ngôn ngữ",
+    "trending": "Xu hướng",
+    "allGenres": "Tất cả thể loại"
+  },
+  "story": {
+    "novel": "Tiểu thuyết",
+    "manga": "Truyện tranh",
+    "lightNovel": "Light Novel",
+    "ongoing": "Đang tiến hành",
+    "completed": "Hoàn thành",
+    "hiatus": "Tạm ngưng",
+    "draft": "Bản nháp",
+    "chapters": "Chương",
+    "chapter": "Chương {number}",
+    "synopsis": "Tóm tắt",
+    "genres": "Thể loại",
+    "author": "Tác giả",
+    "views": "{count} lượt xem",
+    "rating": "Đánh giá",
+    "bookmark": "Đánh dấu",
+    "bookmarked": "Đã đánh dấu",
+    "startReading": "Bắt đầu đọc",
+    "continueReading": "Đọc tiếp",
+    "noChapters": "Chưa có chương nào"
+  },
+  "reader": {
+    "fontSize": "Cỡ chữ",
+    "theme": "Giao diện",
+    "light": "Sáng",
+    "dark": "Tối",
+    "sepia": "Sepia",
+    "previousChapter": "Chương trước",
+    "nextChapter": "Chương sau",
+    "scrollMode": "Cuộn dọc",
+    "pageMode": "Từng trang",
+    "progress": "{percent}% đã đọc"
+  },
+  "auth": {
+    "loginTitle": "Đăng nhập",
+    "signupTitle": "Tạo tài khoản",
+    "email": "Email",
+    "password": "Mật khẩu",
+    "confirmPassword": "Xác nhận mật khẩu",
+    "forgotPassword": "Quên mật khẩu?",
+    "orContinueWith": "Hoặc tiếp tục với",
+    "google": "Google",
+    "noAccount": "Chưa có tài khoản?",
+    "hasAccount": "Đã có tài khoản?"
+  },
+  "comments": {
+    "title": "Bình luận",
+    "placeholder": "Viết bình luận...",
+    "submit": "Gửi",
+    "noComments": "Chưa có bình luận nào",
+    "loginToComment": "Đăng nhập để bình luận"
+  },
+  "notifications": {
+    "subscribe": "Nhận thông báo",
+    "unsubscribe": "Tắt thông báo",
+    "newChapter": "Chương mới: {title}"
+  },
+  "settings": {
+    "title": "Cài đặt",
+    "language": "Ngôn ngữ",
+    "notifications": "Thông báo",
+    "enableNotifications": "Bật thông báo đẩy",
+    "readingPreferences": "Tùy chọn đọc"
+  },
+  "errors": {
+    "notFound": "Không tìm thấy trang",
+    "notFoundDesc": "Trang bạn tìm không tồn tại hoặc đã bị xóa.",
+    "serverError": "Lỗi hệ thống",
+    "serverErrorDesc": "Đã xảy ra lỗi. Vui lòng thử lại sau.",
+    "unauthorized": "Không có quyền truy cập",
+    "banned": "Tài khoản đã bị khóa"
+  }
+}

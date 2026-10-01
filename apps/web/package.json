@@ -1,0 +1,32 @@
+{
+  "name": "@repo/web",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --port 3000",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "next": "^15",
+    "react": "^19",
+    "react-dom": "^19",
+    "next-intl": "^4",
+    "@supabase/supabase-js": "^2",
+    "@supabase/ssr": "^0.5",
+    "@repo/ui": "*",
+    "@repo/types": "*",
+    "@repo/supabase": "*",
+    "@repo/i18n": "*"
+  },
+  "devDependencies": {
+    "typescript": "^5.7",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@types/node": "^22",
+    "tailwindcss": "^4",
+    "@tailwindcss/postcss": "^4"
+  }
+}

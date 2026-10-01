@@ -1,0 +1,115 @@
+{
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "retry": "Retry",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "create": "Create",
+    "search": "Search",
+    "filter": "Filter",
+    "sortBy": "Sort by",
+    "noResults": "No results found",
+    "viewAll": "View all",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "confirm": "Confirm",
+    "close": "Close"
+  },
+  "nav": {
+    "home": "Home",
+    "browse": "Browse",
+    "bookmarks": "Bookmarks",
+    "history": "Reading History",
+    "settings": "Settings",
+    "login": "Log in",
+    "signup": "Sign up",
+    "logout": "Log out",
+    "profile": "Profile"
+  },
+  "home": {
+    "featured": "Featured Stories",
+    "latestUpdates": "Latest Updates",
+    "latestUpdatesSub": "List of newly released novels and manga",
+    "noStories": "No stories have been published yet.",
+    "searchPlaceholder": "Search title, author...",
+    "footerTagline": "Multilingual personal story reading platform",
+    "trending": "Trending",
+    "allGenres": "All Genres"
+  },
+  "story": {
+    "novel": "Novel",
+    "manga": "Manga",
+    "lightNovel": "Light Novel",
+    "ongoing": "Ongoing",
+    "completed": "Completed",
+    "hiatus": "Hiatus",
+    "draft": "Draft",
+    "chapters": "Chapters",
+    "chapter": "Chapter {number}",
+    "synopsis": "Synopsis",
+    "genres": "Genres",
+    "author": "Author",
+    "views": "{count} views",
+    "rating": "Rating",
+    "bookmark": "Bookmark",
+    "bookmarked": "Bookmarked",
+    "startReading": "Start Reading",
+    "continueReading": "Continue Reading",
+    "noChapters": "No chapters yet"
+  },
+  "reader": {
+    "fontSize": "Font Size",
+    "theme": "Theme",
+    "light": "Light",
+    "dark": "Dark",
+    "sepia": "Sepia",
+    "previousChapter": "Previous Chapter",
+    "nextChapter": "Next Chapter",
+    "scrollMode": "Scroll Mode",
+    "pageMode": "Page Mode",
+    "progress": "{percent}% read"
+  },
+  "auth": {
+    "loginTitle": "Log In",
+    "signupTitle": "Create Account",
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "forgotPassword": "Forgot password?",
+    "orContinueWith": "Or continue with",
+    "google": "Google",
+    "noAccount": "Don't have an account?",
+    "hasAccount": "Already have an account?"
+  },
+  "comments": {
+    "title": "Comments",
+    "placeholder": "Write a comment...",
+    "submit": "Submit",
+    "noComments": "No comments yet",
+    "loginToComment": "Log in to comment"
+  },
+  "notifications": {
+    "subscribe": "Get notified",
+    "unsubscribe": "Turn off notifications",
+    "newChapter": "New chapter: {title}"
+  },
+  "settings": {
+    "title": "Settings",
+    "language": "Language",
+    "notifications": "Notifications",
+    "enableNotifications": "Enable push notifications",
+    "readingPreferences": "Reading Preferences"
+  },
+  "errors": {
+    "notFound": "Page Not Found",
+    "notFoundDesc": "The page you're looking for doesn't exist or has been removed.",
+    "serverError": "Server Error",
+    "serverErrorDesc": "Something went wrong. Please try again later.",
+    "unauthorized": "Unauthorized",
+    "banned": "Account suspended"
+  }
+}

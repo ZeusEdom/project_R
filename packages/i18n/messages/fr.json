@@ -1,0 +1,115 @@
+{
+  "common": {
+    "loading": "Chargement...",
+    "error": "Une erreur est survenue",
+    "retry": "Reessayer",
+    "save": "Enregistrer",
+    "cancel": "Annuler",
+    "delete": "Supprimer",
+    "edit": "Modifier",
+    "create": "Creer",
+    "search": "Rechercher",
+    "filter": "Filtrer",
+    "sortBy": "Trier par",
+    "noResults": "Aucun resultat",
+    "viewAll": "Voir tout",
+    "back": "Retour",
+    "next": "Suivant",
+    "previous": "Precedent",
+    "confirm": "Confirmer",
+    "close": "Fermer"
+  },
+  "nav": {
+    "home": "Accueil",
+    "browse": "Parcourir",
+    "bookmarks": "Favoris",
+    "history": "Historique de lecture",
+    "settings": "Parametres",
+    "login": "Se connecter",
+    "signup": "S'inscrire",
+    "logout": "Se deconnecter",
+    "profile": "Profil"
+  },
+  "home": {
+    "featured": "Histoires en vedette",
+    "latestUpdates": "Dernières Mises à Jour",
+    "latestUpdatesSub": "Liste des romans et mangas nouvellement publiés",
+    "noStories": "Aucun roman n'a encore été publié.",
+    "searchPlaceholder": "Rechercher par titre, auteur...",
+    "footerTagline": "Plateforme de lecture d'histoires multilingue",
+    "trending": "Tendances",
+    "allGenres": "Tous les genres"
+  },
+  "story": {
+    "novel": "Roman",
+    "manga": "Manga",
+    "lightNovel": "Light Novel",
+    "ongoing": "En cours",
+    "completed": "Termine",
+    "hiatus": "En pause",
+    "draft": "Brouillon",
+    "chapters": "Chapitres",
+    "chapter": "Chapitre {number}",
+    "synopsis": "Synopsis",
+    "genres": "Genres",
+    "author": "Auteur",
+    "views": "{count} vues",
+    "rating": "Note",
+    "bookmark": "Ajouter aux favoris",
+    "bookmarked": "Dans les favoris",
+    "startReading": "Commencer a lire",
+    "continueReading": "Continuer la lecture",
+    "noChapters": "Aucun chapitre"
+  },
+  "reader": {
+    "fontSize": "Taille de police",
+    "theme": "Theme",
+    "light": "Clair",
+    "dark": "Sombre",
+    "sepia": "Sepia",
+    "previousChapter": "Chapitre precedent",
+    "nextChapter": "Chapitre suivant",
+    "scrollMode": "Mode defilement",
+    "pageMode": "Mode page",
+    "progress": "{percent}% lu"
+  },
+  "auth": {
+    "loginTitle": "Connexion",
+    "signupTitle": "Creer un compte",
+    "email": "Email",
+    "password": "Mot de passe",
+    "confirmPassword": "Confirmer le mot de passe",
+    "forgotPassword": "Mot de passe oublie ?",
+    "orContinueWith": "Ou continuer avec",
+    "google": "Google",
+    "noAccount": "Pas encore de compte ?",
+    "hasAccount": "Deja un compte ?"
+  },
+  "comments": {
+    "title": "Commentaires",
+    "placeholder": "Ecrire un commentaire...",
+    "submit": "Envoyer",
+    "noComments": "Aucun commentaire",
+    "loginToComment": "Connectez-vous pour commenter"
+  },
+  "notifications": {
+    "subscribe": "Recevoir les notifications",
+    "unsubscribe": "Desactiver les notifications",
+    "newChapter": "Nouveau chapitre : {title}"
+  },
+  "settings": {
+    "title": "Parametres",
+    "language": "Langue",
+    "notifications": "Notifications",
+    "enableNotifications": "Activer les notifications push",
+    "readingPreferences": "Preferences de lecture"
+  },
+  "errors": {
+    "notFound": "Page non trouvee",
+    "notFoundDesc": "La page que vous cherchez n'existe pas ou a ete supprimee.",
+    "serverError": "Erreur du serveur",
+    "serverErrorDesc": "Quelque chose s'est mal passe. Veuillez reessayer plus tard.",
+    "unauthorized": "Non autorise",
+    "banned": "Compte suspendu"
+  }
+}

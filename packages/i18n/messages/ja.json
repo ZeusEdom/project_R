@@ -1,0 +1,115 @@
+{
+  "common": {
+    "loading": "読み込み中...",
+    "error": "エラーが発生しました",
+    "retry": "再試行",
+    "save": "保存",
+    "cancel": "キャンセル",
+    "delete": "削除",
+    "edit": "編集",
+    "create": "新規作成",
+    "search": "検索",
+    "filter": "フィルター",
+    "sortBy": "並べ替え",
+    "noResults": "結果が見つかりません",
+    "viewAll": "すべて表示",
+    "back": "戻る",
+    "next": "次へ",
+    "previous": "前へ",
+    "confirm": "確認",
+    "close": "閉じる"
+  },
+  "nav": {
+    "home": "ホーム",
+    "browse": "作品一覧",
+    "bookmarks": "ブックマーク",
+    "history": "閲覧履歴",
+    "settings": "設定",
+    "login": "ログイン",
+    "signup": "新規登録",
+    "logout": "ログアウト",
+    "profile": "プロフィール"
+  },
+  "home": {
+    "featured": "注目の作品",
+    "latestUpdates": "最新更新作品",
+    "latestUpdatesSub": "新しくリリースされた小説と漫画のリスト",
+    "noStories": "まだ作品が公開されていません。",
+    "searchPlaceholder": "タイトル、作者を検索...",
+    "footerTagline": "多言語対応の個人向け小説読書プラットフォーム",
+    "trending": "トレンド",
+    "allGenres": "全ジャンル"
+  },
+  "story": {
+    "novel": "小説",
+    "manga": "漫画",
+    "lightNovel": "ライトノベル",
+    "ongoing": "連載中",
+    "completed": "完結",
+    "hiatus": "休載中",
+    "draft": "下書き",
+    "chapters": "章",
+    "chapter": "第{number}章",
+    "synopsis": "あらすji",
+    "genres": "ジャンル",
+    "author": "作者",
+    "views": "{count}回閲覧",
+    "rating": "評価",
+    "bookmark": "ブックマーク",
+    "bookmarked": "ブックマーク済み",
+    "startReading": "読み始める",
+    "continueReading": "続きを読む",
+    "noChapters": "まだ章がありません"
+  },
+  "reader": {
+    "fontSize": "文字サイズ",
+    "theme": "テーマ",
+    "light": "ライト",
+    "dark": "ダーク",
+    "sepia": "セピア",
+    "previousChapter": "前の章",
+    "nextChapter": "次の章",
+    "scrollMode": "スクロールモード",
+    "pageMode": "ページモード",
+    "progress": "{percent}%読了"
+  },
+  "auth": {
+    "loginTitle": "ログイン",
+    "signupTitle": "アカウント作成",
+    "email": "メールアドレス",
+    "password": "パスワード",
+    "confirmPassword": "パスワード確認",
+    "forgotPassword": "パスワードを忘れましたか?",
+    "orContinueWith": "または",
+    "google": "Google",
+    "noAccount": "アカウントをお持ちでないですか?",
+    "hasAccount": "すでにアカウントをお持ちですか?"
+  },
+  "comments": {
+    "title": "コメント",
+    "placeholder": "コメントを書く...",
+    "submit": "送信",
+    "noComments": "まだコメントはありません",
+    "loginToComment": "コメントするにはログインしてください"
+  },
+  "notifications": {
+    "subscribe": "通知を受け取る",
+    "unsubscribe": "通知をオフにする",
+    "newChapter": "新しい章: {title}"
+  },
+  "settings": {
+    "title": "設定",
+    "language": "言語",
+    "notifications": "通知",
+    "enableNotifications": "プッシュ通知を有効にする",
+    "readingPreferences": "読書設定"
+  },
+  "errors": {
+    "notFound": "ページが見つかりません",
+    "notFoundDesc": "お探しのページは存在しないか、削除されています。",
+    "serverError": "サーバーエラー",
+    "serverErrorDesc": "問題が発生しました。後でもう一度お試しください。",
+    "unauthorized": "アクセス権がありません",
+    "banned": "アカウントが停止されています"
+  }
+}
